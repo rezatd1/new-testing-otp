@@ -74,7 +74,7 @@ class OTPFormClass extends React.Component {
                 .then((otp) => {
                     // alert(this.numberConverter(otp.code))
                     // this.setState({ verifyCode: otp.code });
-                    this.input.current.value = this.numberConverter(otp.code);
+                    this.input.current.value = otp.code;
                 })
                 .catch((err) => {
                     console.log(err);
@@ -92,7 +92,7 @@ class OTPFormClass extends React.Component {
         return (
             <InputMask
                 className='ns-activation-input'
-                mask=''
+                mask='9 - 9 - 9 - 9 - 9 - 9'
                 onChange={this.changeInput}
                 maskChar=' '
                 showMask >
