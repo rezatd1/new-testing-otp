@@ -72,9 +72,9 @@ class OTPFormClass extends React.Component {
                     signal: ac.signal,
                 })
                 .then((otp) => {
-                    alert(this.numberConverter(otp.code))
-                    this.setState({ verifyCode: otp.code });
-                    // this.input.current.value = this.numberConverter(otp.code);
+                    // alert(this.numberConverter(otp.code))
+                    // this.setState({ verifyCode: otp.code });
+                    this.input.current.value = this.numberConverter(otp.code);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -102,7 +102,6 @@ class OTPFormClass extends React.Component {
                         variant='standard'
                         helperText={this.state.helperText}
                         inputRef={this.input}
-                        // value={this.state.verifyCode}
                         label='ssss'
                         size='small'
                         className='w-100 not-rtl'
