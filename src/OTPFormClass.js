@@ -59,7 +59,7 @@ class OTPFormClass extends React.Component {
                     signal: ac.signal,
                 })
                 .then((otp) => {
-                    alert(otp)
+                    alert(otp.code)
                     this.setState({ verifyCode: otp.code });
                 })
                 .catch((err) => {
