@@ -42,7 +42,7 @@ class OTPFormClass extends React.Component {
     //     }
     // }
 
-    NumberConverter = (data) => {
+    numberConverter = (data) => {
         // Convert the number to a string
         const numberString = data.toString();
 
@@ -72,8 +72,9 @@ class OTPFormClass extends React.Component {
                     signal: ac.signal,
                 })
                 .then((otp) => {
-                    alert(this.NumberConverter(otp.code))
-                    this.setState({ verifyCode: this.NumberConverter(otp.code) });
+                    alert(this.numberConverter(otp.code))
+                    this.setState({ verifyCode: this.numberConverter(otp.code) });
+                    this.input.current.value = this.numberConverter(otp.code);
                 })
                 .catch((err) => {
                     console.log(err);
