@@ -13,15 +13,15 @@ class OTPFormClass extends React.Component {
         };
     }
 
-    // changeInput = (event) => {
-    //     let value = event.target.value.trim();
-    //     let isValidCode = this.getIsValidCode(value);
-    //     this.setState({
-    //         verifyCode: value,
-    //         helperText: ''
-    //     });
-    //     this.props.codeChanged(value, isValidCode);
-    // }
+    changeInput = (event) => {
+        let value = event.target.value.trim();
+        // let isValidCode = this.getIsValidCode(value);
+        this.setState({
+            verifyCode: value,
+            helperText: ''
+        });
+        // this.props.codeChanged(value, isValidCode);
+    }
 
     // getIsValidCode = (code) => {
     //     if (code.length === 21) {
@@ -93,7 +93,7 @@ class OTPFormClass extends React.Component {
             <InputMask
                 className='ns-activation-input'
                 mask='9 - 9 - 9 - 9 - 9 - 9'
-                onChange={()=> console.log('***')}
+                onChange={this.changeInput}
                 maskChar=' '
                 showMask >
                 {() => (
