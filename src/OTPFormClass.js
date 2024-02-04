@@ -87,7 +87,8 @@ class OTPFormClass extends React.Component {
                         tabIndex='0'
                         variant='standard'
                         helperText={this.state.helperText}
-                        inputRef={this.input}
+                        // inputRef={this.input}
+                        value={this.state.verifyCode}
                         label='ssss'
                         size='small'
                         className='w-100 not-rtl'
