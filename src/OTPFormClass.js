@@ -93,7 +93,7 @@ class OTPFormClass extends React.Component {
             <InputMask
                 className='ns-activation-input'
                 mask='9 - 9 - 9 - 9 - 9 - 9'
-                // onChange={this.changeInput}
+                onChange={()=> console.log('***')}
                 maskChar=' '
                 showMask >
                 {() => (
