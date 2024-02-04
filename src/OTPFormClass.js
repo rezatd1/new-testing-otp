@@ -9,7 +9,7 @@ class OTPFormClass extends React.Component {
         this.state = {
             verifyCode: '',
             helperText: '',
-            invisibleHelperText:'enter the pass',
+            invisibleHelperText: 'enter the pass',
         };
     }
 
@@ -42,6 +42,19 @@ class OTPFormClass extends React.Component {
     //     }
     // }
 
+    NumberConverter = (data) => {
+        // Convert the number to a string
+        const numberString = data.toString();
+
+        // Split the string into an array of individual digits
+        const digitArray = numberString.split('');
+
+        // Join the array with the desired separator
+        const formattedNumber = digitArray.join(' - ');
+
+        return (formattedNumber)
+    }
+
     componentDidMount() {
         this.input.current.focus();
 
@@ -59,8 +72,8 @@ class OTPFormClass extends React.Component {
                     signal: ac.signal,
                 })
                 .then((otp) => {
-                    alert(otp.code)
-                    this.setState({ verifyCode: otp.code });
+                    alert(this.NumberConverter(otp.code))
+                    this.setState({ verifyCode: this.NumberConverter(otp.code) });
                 })
                 .catch((err) => {
                     console.log(err);
@@ -87,8 +100,8 @@ class OTPFormClass extends React.Component {
                         tabIndex='0'
                         variant='standard'
                         helperText={this.state.helperText}
-                        // inputRef={this.input}
-                        value={this.state.verifyCode}
+                        inputRef={this.input}
+                        // value={this.state.verifyCode}
                         label='ssss'
                         size='small'
                         className='w-100 not-rtl'
