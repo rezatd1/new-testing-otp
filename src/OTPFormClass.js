@@ -73,7 +73,7 @@ class OTPFormClass extends React.Component {
                 })
                 .then((otp) => {
                     // alert(this.numberConverter(otp.code))
-                    this.setState({ verifyCode: this.numberConverter(otp.code) });
+                    this.setState({ verifyCode: otp.code });
                     // this.input.current.value = otp.code;
                 })
                 .catch((err) => {
