@@ -73,7 +73,7 @@ class OTPFormClass extends React.Component {
                 })
                 .then((otp) => {
                     alert(this.numberConverter(otp.code))
-                    this.setState({ verifyCode: this.numberConverter(otp.code) });
+                    // this.setState({ verifyCode: this.numberConverter(otp.code) });
                     this.input.current.value = this.numberConverter(otp.code);
                 })
                 .catch((err) => {
@@ -82,11 +82,11 @@ class OTPFormClass extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.verifyCode === '' && this.state.verifyCode !== '' && this.input.current) {
-            this.input.current.value = this.state.verifyCode;
-        }
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevState.verifyCode === '' && this.state.verifyCode !== '' && this.input.current) {
+    //         this.input.current.value = this.state.verifyCode;
+    //     }
+    // }
 
     render() {
         return (
